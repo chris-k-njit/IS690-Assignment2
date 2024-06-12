@@ -60,10 +60,10 @@ class UserResponse(UserBase):
     nickname: Optional[str] = Field(None, min_length=3, pattern=r'^[\w-]+$', example=generate_nickname())    
     is_professional: Optional[bool] = Field(default=False, example=True)
     role: UserRole
-    links: List[dict] = Field([], example=[
-        {"rel": "self", "href": "/events/{id}"},
-        {"rel": "creator", "href": "/users/{creator_id}"}
-    ])
+    # links: List[dict] = Field([], example=[
+    #     {"rel": "self", "href": "/events/{id}"},
+    #     {"rel": "creator", "href": "/users/{creator_id}"}
+    #])
 
 class LoginRequest(BaseModel):
     email: str = Field(..., example="john.doe@example.com")
